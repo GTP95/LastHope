@@ -1,0 +1,1 @@
+Implementazione rapida e non tanto pulita di alcuni indici di dispersione fatta per un (forse non tanto) noto professore di Storia

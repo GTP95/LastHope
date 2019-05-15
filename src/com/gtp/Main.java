@@ -13,7 +13,7 @@ public class Main {
     public static void calcolaIndici(){
         ArrayList<Float> voti=new ArrayList<>();
         float media;
-        float mediaDegliScostamenti;
+        double mediaDegliScostamenti;
         int numeroSufficienze;
         float percentualeSufficienze;
         float varianza;
@@ -41,6 +41,10 @@ public class Main {
         System.out.println();
         System.out.println("INDICI DI DISPERSIONE:");
         System.out.println("Varianza: " + varianza);
+        System.out.println();
+        System.out.println();
+        System.out.println("Eseguire il calcolo per una nuova lista di voti? [S/n] ");
+        if(scanner.next()=="s" || scanner.next()=="S" || scanner.next()=="") calcolaIndici();
     }
 
     public static float media(ArrayList<Float> voti){
@@ -49,9 +53,9 @@ public class Main {
         return (float)somma/voti.size();
     }
 
-    public static float mediaDegliScostamenti(ArrayList<Float> voti, float media){  //TODO: debug
-        float scostamento;
-        float sommaDegliScostamenti=0;
+    public static double mediaDegliScostamenti(ArrayList<Float> voti, float media){
+        double scostamento;
+        double sommaDegliScostamenti=0f;
         for(float voto : voti){
             scostamento=voto-media;
             sommaDegliScostamenti+=scostamento;
@@ -110,6 +114,7 @@ public class Main {
         System.out.println("La \"media degli scostamenti\" viene calcolata sottraendo a ciascun voto la media dei voti e facendo la media dei valori così ottenuti.");
         System.out.println("Un valore positivo, per esempio 0.5, indica che i voti sono mediamente più alti della media. In questo esempio in media sono più alti di mezzo voto.");
         System.out.println("Viceversa un valore negativo indica che sono mediamente più bassi della media");
+        System.out.println("Nel caso il risultato sia 0 ignorare questo indice ed affidarsi alla varianza");
         System.out.println("ATTENZIONE: questo indice non viene utilizzato in Statistica, usarlo con precauzione!");
     }
 

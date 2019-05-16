@@ -43,8 +43,9 @@ public class Main {
         System.out.println("Varianza: " + varianza);
         System.out.println();
         System.out.println();
-        System.out.println("Eseguire il calcolo per una nuova lista di voti? [S/n] ");
-        if(scanner.next()=="s" || scanner.next()=="S" || scanner.next()=="") calcolaIndici();
+        System.out.print("Eseguire il calcolo per una nuova lista di voti? [S/n] ");
+       // while (!scanner.hasNextLine()); //aspetta che l'utente iserisca qualcosa
+        if(scanner.next().equals("s") || scanner.next().equals("S") || scanner.next().isEmpty()) calcolaIndici();
     }
 
     public static float media(ArrayList<Float> voti){
